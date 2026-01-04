@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Lumina Travel</title>
+    
+    <!-- PWA & iOS Specific Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lumina">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/826/826070.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +21,8 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-tap-highlight-color: transparent;
             background-color: #f8fafc;
+            /* Prevents rubber-banding on iOS while allowing scrolling */
+            overscroll-behavior-y: none;
         }
         .ios-blur {
             background-color: rgba(255, 255, 255, 0.7);
@@ -26,6 +37,10 @@
         }
         ::-webkit-scrollbar {
             display: none;
+        }
+        /* Fix for iOS height issues in PWA mode */
+        .min-h-screen {
+            min-height: -webkit-fill-available;
         }
     </style>
 <script type="importmap">
