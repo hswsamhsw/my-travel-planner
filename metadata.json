@@ -1,0 +1,7 @@
+{
+  "name": "Lumina Travel Planner",
+  "description": "High-end AI-powered travel planning with itinerary, checklists, and expense tracking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
